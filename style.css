@@ -1,0 +1,189 @@
+/* GENERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+ font-family: 'Great Vibes', cursive;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  overflow: hidden;
+}
+
+/* PANTALLAS */
+.pantalla {
+  display: none;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.activa {
+  display: flex;
+}
+
+/* TARJETA */
+.card {
+  background: white;
+  width: 100%;
+  max-width: 360px;
+  border-radius: 25px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0px 15px 40px rgba(0,0,0,0.25);
+  z-index: 2;
+  position: relative;
+}
+
+/* TITULOS */
+h1 {
+   font-family: 'pacifico', cursive; /* Nueva fuente */
+color: #ff3366;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+p {
+  color: #444;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+/* BOTONES */
+button {
+  width: 90%;
+  padding: 15px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin: 8px 0;
+}
+
+#btnStart {
+  background: #ff3366;
+  color: white;
+}
+
+#btnYes {
+  background: limegreen;
+  color: white;
+}
+
+#btnNo {
+  background: #ddd;
+  color: black;
+}
+
+/* MENSAJE NO */
+#mensajeNo {
+  margin-top: 15px;
+  font-size: 0.95rem;
+  color: #777;
+}
+
+/* FOTO */
+.nombre {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  font.weigth: bold;
+   /* Color negro */
+  color: black;
+
+  /* Brillo luminoso alrededor */
+  text-shadow: 
+    0 0 5px white,
+    0 0 10px pink,
+    0 0 20px hotpink;
+}
+
+.foto {
+  width: 180px;
+  height: 180px;
+  border-radius: 20px;
+  object-fit: cover;
+  margin: 15px auto;
+  box-shadow: 0px 0px 20px rgba(255,0,100,0.4);
+}
+
+/* CARTA */
+.carta {
+  background: #fff0f5;
+  border-radius: 20px;
+  padding: 15px;
+  height: 200px;
+  overflow-y: scroll;
+  text-align: left;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* SCROLL BONITO */
+.carta::-webkit-scrollbar {
+  width: 6px;
+}
+.carta::-webkit-scrollbar-thumb {
+  background: #ff3366;
+  border-radius: 10px;
+}
+
+/* ===== CORAZONES BURBUJA ===== */
+
+.bg-hearts {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bg-hearts span {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: rgba(255,255,255,0.6);
+  bottom: -40px;
+  transform: rotate(45deg);
+  animation: rise 8s linear infinite;
+}
+
+
+.bg-hearts span::before,
+.bg-hearts span::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 50%;
+}
+
+.bg-hearts span::before {
+  top: -9px;
+  left: 0;
+}
+
+.bg-hearts span::after {
+  top: 0;
+  left: -9px;
+}
+
+#btnNo {
+  position: relative;
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(0) rotate(45deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh) rotate(45deg);
+    opacity: 0;
+  }
+}
